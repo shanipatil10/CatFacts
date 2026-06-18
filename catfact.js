@@ -1,23 +1,41 @@
+const factBtn = document.querySelector("#facts");
+const factText = document.querySelector("#factText");
+const catImg = document.querySelector("#catImg");
 
-let url='https://catfact.ninja/fact';
-let btn=document.querySelector("#facts");
-let body=document.querySelector("body");
-let p=document.createElement("p");
-body.append(p);
-btn.addEventListener("click",async()=>{
-    let result=await getfacts();
-    p.innerText=result;
-    
-    
-});
-async function getfacts() {
-    
-        try{
-            let result=await fetch(url);// we can axios.get() and we will not be use parse to convert the readable stream data to show real data 
-            let data=await result.json();
-            return data.fact;
-        }
-        catch{
-            console.log("error found");
-        }
+const factURL = "https://catfact.ninja/fact";
+const catURL = "https://api.thecatapi.com/v1/images/search";
+
+factBtn.addEventListener("click", async () => {
+
+    factText.innerText = "Loading Cat Fact... 🐾";
+
+    try{
+
+        const [factRes, imgRes] = await Promise.all([
+            fetch(factURL),
+            fetch(catURL)
+        ]);
+
+        const factData = await factRes.json();
+        const imgData = await imgRes.json();
+
+        factText.innerText = factData.fact;
+        catImg.src = imgData[0].url;
+
+        factText.classList.remove("animate");
+        catImg.classList.remove("animate");
+
+        void factText.offsetWidth;
+
+        factText.classList.add("animate");
+        catImg.classList.add("animate");
+
     }
+    catch(error){
+
+        factText.innerText =
+        "Unable to fetch cat fact. Please try again.";
+
+        console.log(error);
+    }
+});

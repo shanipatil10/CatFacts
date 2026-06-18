@@ -3,19 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CatsFacts</title>
+    <title>CatVerse</title>
     <link rel="stylesheet" href="catfact.css">
 </head>
 <body>
-     <h1 id="headcat">🐱 Do You Know Cat Facts?</h1>
 
-<button id="facts">
-    Generate New Fact
-</button>
-   
+    <div class="bg-circle circle1"></div>
+    <div class="bg-circle circle2"></div>
+
+    <div class="container">
+
+        <h1>🐱 CatVerse</h1>
+        <p class="subtitle">Discover adorable cat facts and photos</p>
+
+        <div class="card">
+
+            <div class="img-box">
+                <img id="catImg"
+                    src="https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg"
+                    alt="Cat">
+            </div>
+
+            <div class="fact-box">
+                <p id="factText">
+                    Click the button below to discover an amazing cat fact!
+                </p>
+            </div>
+
+            <button id="facts">
+                Generate New Fact
+            </button>
+
+        </div>
+
+    </div>
+
     <script src="catfact.js"></script>
 </body>
-<div class="cat cat1">🐱</div>
-<div class="cat cat2">🐈</div>
-<div class="cat cat3">😺</div>
 </html>
