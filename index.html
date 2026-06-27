@@ -3,41 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CatVerse</title>
-    <link rel="stylesheet" href="catfact.css">
+    <title>Food Explorer</title>
+    <link rel="stylesheet" href="foodfact.css">
 </head>
 <body>
 
-    <div class="bg-circle circle1"></div>
-    <div class="bg-circle circle2"></div>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
 
     <div class="container">
 
-        <h1>🐱 CatVerse</h1>
-        <p class="subtitle">Discover adorable cat facts and photos</p>
+        <h1>🍔 Food Explorer</h1>
+        <p class="subtitle">Discover foods from around the world</p>
 
-        <div class="card">
+        <div class="glass-card">
 
-            <div class="img-box">
-                <img id="catImg"
-                    src="https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg"
-                    alt="Cat">
+            <div class="img-container">
+                <img id="foodImg" alt="Food Product">
             </div>
 
-            <div class="fact-box">
-                <p id="factText">
-                    Click the button below to discover an amazing cat fact!
-                </p>
+            <div class="food-info">
+
+                <h2 id="foodName">
+                    Click Generate
+                </h2>
+
+                <div class="info-box">
+                    <span>🏷 Brand</span>
+                    <span id="brand">-</span>
+                </div>
+
+                <div class="info-box">
+                    <span>🥗 Nutrition Grade</span>
+                    <span id="grade">-</span>
+                </div>
+
+                <div class="info-box">
+                    <span>🌍 Country</span>
+                    <span id="country">-</span>
+                </div>
+
+                <div class="ingredients-box">
+                    <h3>Ingredients</h3>
+                    <p id="ingredients">
+                        Click generate to load food information.
+                    </p>
+                </div>
+
             </div>
 
-            <button id="facts">
-                Generate New Fact
+            <button id="generateBtn">
+                Generate Food
             </button>
 
         </div>
 
     </div>
 
-    <script src="catfact.js"></script>
+    <script src="foodfact.js"></script>
 </body>
 </html>
